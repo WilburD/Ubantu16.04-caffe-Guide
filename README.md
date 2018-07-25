@@ -31,8 +31,7 @@ Roadmap:
 (or, OpenCV 3.3 - see the instructions below)
 
 2nd: install the Nvidia driver. Before installing the driver,u need to search for the version responding to ur sys. conf. by running the command below:
-    >sudo ubuntu-drivers devices
-
+        >sudo ubuntu-drivers devices
 	> sudo add-apt-repository -qy ppa:graphics-drivers/ppa
 	> sudo apt-get -qy update
 	> sudo apt-get -qy install nvidia-XXX
@@ -46,12 +45,12 @@ Roadmap:
 	Then follow the instruction in the terminal window
 	> chmod u+x ./cuda_8.0.27_linux.run
 	> sudo ./cuda_8.0.27_linux.run –tmpdir=/tmp –override
+	
 	As u have installed the Nvidia accelerated graphics driver above,pay more attiontion that u need to type no option when asking u whether installing the driver.
 	After finishing installing,there would be a summary shown as below,if same to urs.congtats,u make it.The cuda has been installed succesfully.
-
-
-
+	
 	>  source ~/.bashrc
+	
 Adding the following instruction  to the file at the end.
 
 	> export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
@@ -64,9 +63,10 @@ Register an account in order to download and install the Debian (.deb) package t
 	> sudo dpkg -i libcudnn7_7.0.2.38-1+cuda8.0_amd64.deb
 	> sudo dpkg -i libcudnn7-dev_7.0.2.38-1+cuda8.0_amd64.deb
 	> reboot
+	
 Then type as follows to verify whether it works or not.
-	> Nvidia-smi
 
+	> Nvidia-smi
 	> cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery
 	> make
 	>  ./deviceQuery
@@ -89,7 +89,6 @@ Enter the unpacked directory. Execute:
 	> mkdir build
   	> cd build/
 	> cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D FORCE_VTK=ON -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON -D WITH_CUBLAS=ON -D CUDA_NVCC_FLAGS="-D_FORCE_INLINES" -D WITH_GDAL=ON -D WITH_XINE=ON -D BUILD_EXAMPLES=ON ..
-#(Note thats one sentence above, just one space between to each word)
 	> make -j $(($(nproc) + 1))
 
 Well now lets install the opencv3.6,at first start,using make as follows:
@@ -106,35 +105,31 @@ Go to the https://github.com/BVLC/caffe and download the zip archive. Unpack it 
 There are many things should be modified in Makefile and Makefile.config. File where responding to ur device configuration. But still there are loads of common things could be changed. Such as :
 
 Makefile.config:
-Change
+Change the first instruction to the second one.
 
-INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include
-to
-INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
-
+	> INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include
+	> INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
 
 Also open the file CMakeLists.txt and add the following line:
-# ---[ Includes
-set(${CMAKE_CXX_FLAGS} "-D_FORCE_INLINES ${CMAKE_CXX_FLAGS}")
+
+	> # ---[ Includes 
+	set(${CMAKE_CXX_FLAGS} "-D_FORCE_INLINES ${CMAKE_CXX_FLAGS}")
 
 Makefile:
-change
+Change the first instruction to the second one.
 
-LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5
-to
-LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial
+	> LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5
+	> LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial
 
-change
+Change the first instruction to the second one.
 
-LIBRARIES += boost_thread stdc++
-to
-LIBRARIES += boost_thread stdc++ boost_regex
+	> LIBRARIES += boost_thread stdc++
+	> LIBRARIES += boost_thread stdc++ boost_regex
 
-change
+Change the first instruction to the second one.
 
-NVCCFLAGS += -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
-to
-NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
+	> NVCCFLAGS += -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
+	> NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
 
 Still there exits some errors,u need to back to the two files above related to the error and change some settings.
 
@@ -145,5 +140,6 @@ Still there exits some errors,u need to back to the two files above related to t
 	> make runtest
 	> make pycaffe
 	> make distribute
+	
 Note as ur building caffe or pycaffe,search more on the internet to find out how to solve all the problems errors shown in the terminal window,as u dealt with all the errors,all the environment u established will work to the caffe models,and I wanna tell u,u made it.
 
