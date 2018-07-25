@@ -31,7 +31,7 @@ Guide:Ubantu 16.04+cuda8.0+cudnn6.0+opencv3.6+python2.7/3.5(GPU)
 
 2nd: install the Nvidia driver. Before installing the driver,u need to search for the version responding to ur sys. conf. by running the command below:
 
-        >sudo ubuntu-drivers devices
+   >sudo ubuntu-drivers devices
 	> sudo add-apt-repository -qy ppa:graphics-drivers/ppa
 	> sudo apt-get -qy update
 	> sudo apt-get -qy install nvidia-XXX
@@ -44,8 +44,8 @@ Guide:Ubantu 16.04+cuda8.0+cudnn6.0+opencv3.6+python2.7/3.5(GPU)
 	>  https://developer.nvidia.com/cuda-downloads
 	Then follow the instruction in the terminal window
 	
-     > chmod u+x ./cuda_8.0.27_linux.run
-     > sudo ./cuda_8.0.27_linux.run –tmpdir=/tmp –override
+    > chmod u+x ./cuda_8.0.27_linux.run
+    > sudo ./cuda_8.0.27_linux.run –tmpdir=/tmp –override
 	
    As u have installed the Nvidia accelerated graphics driver above,pay more attiontion that u need to type no option when asking u whether installing the driver.
    After finishing installing,there would be a summary shown as below,if same to urs.congtats,u make it.The cuda has been installed succesfully.
