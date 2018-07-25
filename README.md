@@ -44,8 +44,8 @@ Guide:Ubantu 16.04+cuda8.0+cudnn6.0+opencv3.6+python2.7/3.5(GPU)
 	>  https://developer.nvidia.com/cuda-downloads
 	Then follow the instruction in the terminal window
 	
-	> chmod u+x ./cuda_8.0.27_linux.run
-	> sudo ./cuda_8.0.27_linux.run –tmpdir=/tmp –override
+     > chmod u+x ./cuda_8.0.27_linux.run
+     > sudo ./cuda_8.0.27_linux.run –tmpdir=/tmp –override
 	
    As u have installed the Nvidia accelerated graphics driver above,pay more attiontion that u need to type no option when asking u whether installing the driver.
    After finishing installing,there would be a summary shown as below,if same to urs.congtats,u make it.The cuda has been installed succesfully.
@@ -70,7 +70,7 @@ Then type as follows to verify whether it works or not.
 	> Nvidia-smi
 	> cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery
 	> make
-	>  ./deviceQuery
+	> ./deviceQuery
 
 5th:install opencv3.6
 
