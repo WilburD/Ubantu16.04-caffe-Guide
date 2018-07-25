@@ -5,7 +5,7 @@ Guide:Ubantu 16.04+cuda8.0+cudnn6.0+opencv3.6+python2.7/3.5(GPU)
 Roadmap:
 1st: install all the independence related to all the applications.
 
-	 >  sudo apt-get update
+	>  sudo apt-get update
 	>  sudo apt-get upgrade
 	>  sudo apt-get install -y build-essential cmake git pkg-config
 	>  sudo apt-get install -y libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-   serial-dev protobuf-compiler libatlas-base-dev libboost-all-dev libgflags-dev libgoogle-glog-dev liblmdb-dev
@@ -15,7 +15,7 @@ Roadmap:
 
 
 # (Python general)
-sudo apt-get install -y python-pip
+        > sudo apt-get install -y python-pip
 
 # (Python 2.7 development files)
 	> sudo apt-get install -y python-dev
@@ -26,7 +26,7 @@ sudo apt-get install -y python-pip
 	> sudo apt-get install -y python3-numpy python3-scipy
  
 # (OpenCV 2.4)
-> sudo apt-get install -y libopencv-dev
+	> sudo apt-get install -y libopencv-dev
 
 (or, OpenCV 3.3 - see the instructions below)
 
@@ -71,7 +71,7 @@ Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-8.0/doc/pdf for 
 
 To install the driver using this installer, run the following command, replacing <CudaInstaller> with the name of this run file:
 
-    sudo <CudaInstaller>.run -silent -driver
+    	> sudo <CudaInstaller>.run -silent -driver
 
 Logfile is /tmp/cuda_install_6794.log
 
@@ -171,7 +171,7 @@ Secondly,Download the latest source archive for OpenCV 3.3 from the website belo
 Enter the unpacked directory. Execute:
 
 	> mkdir build
-   > cd build/
+  	> cd build/
 	> cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D FORCE_VTK=ON -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON -D WITH_CUBLAS=ON -D CUDA_NVCC_FLAGS="-D_FORCE_INLINES" -D WITH_GDAL=ON -D WITH_XINE=ON -D BUILD_EXAMPLES=ON ..
 #(Note thats one sentence above, just one space between to each word)
 	> make -j $(($(nproc) + 1))
