@@ -15,7 +15,7 @@ Roadmap:
 
 
 # (Python general)
-        > sudo apt-get install -y python-pip
+      > sudo apt-get install -y python-pip
 
 # (Python 2.7 development files)
 	> sudo apt-get install -y python-dev
@@ -40,18 +40,19 @@ Roadmap:
 	> sudo reboot
 
 3rd: install cuda 8.0
-	The LATEST version of Cuda Toolkit 8.0 is available from the NVIDIA website. Download the Cuda Toolkit 8.0 network installer from the NVIDIA site, after registering and filling out the forms. Note that all we need is to obtain the runfile package by clicking the link below.
+   The LATEST version of Cuda Toolkit 8.0 is available from the NVIDIA website. Download the Cuda Toolkit 8.0 network installer from the NVIDIA site, after registering and filling out the forms. Note that all we need is to obtain the runfile package by clicking the link below.
 	>  https://developer.nvidia.com/cuda-downloads
 	Then follow the instruction in the terminal window
+	
 	> chmod u+x ./cuda_8.0.27_linux.run
 	> sudo ./cuda_8.0.27_linux.run –tmpdir=/tmp –override
 	
-	As u have installed the Nvidia accelerated graphics driver above,pay more attiontion that u need to type no option when asking u whether installing the driver.
-	After finishing installing,there would be a summary shown as below,if same to urs.congtats,u make it.The cuda has been installed succesfully.
+   As u have installed the Nvidia accelerated graphics driver above,pay more attiontion that u need to type no option when asking u whether installing the driver.
+   After finishing installing,there would be a summary shown as below,if same to urs.congtats,u make it.The cuda has been installed succesfully.
 	
 	>  source ~/.bashrc
 	
-Adding the following instruction  to the file at the end.
+  Adding the following instruction  to the file at the end.
 
 	> export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 	> export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:$ {LD_LIBRARY_PATH}}
@@ -96,7 +97,7 @@ Well now lets install the opencv3.6,at first start,using make as follows:
 	> sudo make install
 	> sudo /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
 	> sudo ldconfig
-	>  sudo apt-get update
+	> sudo apt-get update
 	> reboot
 
 6th:caffe
