@@ -2,7 +2,6 @@
 Roadmap to caffe congratuation
 Guide:Ubantu 16.04+cuda8.0+cudnn6.0+opencv3.6+python2.7/3.5(GPU)
 
-Roadmap:
 1st: install all the independence related to all the applications.
 
 	>  sudo apt-get update
@@ -15,7 +14,7 @@ Roadmap:
 
 
 # (Python general)
-      > sudo apt-get install -y python-pip
+    > sudo apt-get install -y python-pip
 
 # (Python 2.7 development files)
 	> sudo apt-get install -y python-dev
