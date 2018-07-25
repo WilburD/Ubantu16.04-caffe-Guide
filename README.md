@@ -114,7 +114,6 @@ INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
 
 
 Also open the file CMakeLists.txt and add the following line:
-
 # ---[ Includes
 set(${CMAKE_CXX_FLAGS} "-D_FORCE_INLINES ${CMAKE_CXX_FLAGS}")
 
