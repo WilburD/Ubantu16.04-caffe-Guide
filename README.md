@@ -31,7 +31,8 @@ Guide:Ubantu 16.04+cuda8.0+cudnn6.0+opencv3.6+python2.7/3.5(GPU)
 
 2nd: install the Nvidia driver. Before installing the driver,u need to search for the version responding to ur sys. conf. by running the command below:
 
-   >sudo ubuntu-drivers devices
+   	> sudo ubuntu-drivers devices
+	
 	> sudo add-apt-repository -qy ppa:graphics-drivers/ppa
 	> sudo apt-get -qy update
 	> sudo apt-get -qy install nvidia-XXX
