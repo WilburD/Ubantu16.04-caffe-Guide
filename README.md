@@ -50,32 +50,6 @@ Roadmap:
 	After finishing installing,there would be a summary shown as below,if same to urs.congtats,u make it.The cuda has been installed succesfully.
 
 
-################################################################################
-===========
-= Summary =
-===========
-
-Driver:   Not Selected
-Toolkit:  Installed in /usr/local/cuda-8.0
-Samples:  Installed in /home/programmer, but missing recommended libraries
-
-Please make sure that
- -   PATH includes /usr/local/cuda-8.0/bin
- -   LD_LIBRARY_PATH includes /usr/local/cuda-8.0/lib64, or, add /usr/local/cuda-8.0/lib64 to /etc/ld.so.conf and run ldconfig as root
-
-To uninstall the CUDA Toolkit, run the uninstall script in /usr/local/cuda-8.0/bin
-
-Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-8.0/doc/pdf for detailed information on setting up CUDA.
-
-***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 361.00 is required for CUDA 8.0 functionality to work.
-
-To install the driver using this installer, run the following command, replacing <CudaInstaller> with the name of this run file:
-
-    	> sudo <CudaInstaller>.run -silent -driver
-
-Logfile is /tmp/cuda_install_6794.log
-
-Signal caught, cleaning up
 
 	>  source ~/.bashrc
 Adding the following instruction  to the file at the end.
@@ -92,68 +66,10 @@ Register an account in order to download and install the Debian (.deb) package t
 	> reboot
 Then type as follows to verify whether it works or not.
 	> Nvidia-smi
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 370.23                 Driver Version: 370.23                    |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|===============================+======================+======================|
-|   0  GeForce GTX 1080    Off  | 0000:05:00.0      On |                  N/A |
-| 27%   29C    P8     9W / 180W |    515MiB /  8110MiB |      4%      Default |
-+-------------------------------+----------------------+----------------------+
 
-+-----------------------------------------------------------------------------+
-| Processes:                                                       GPU Memory |
-|  GPU       PID  Type  Process name                               Usage      |
-|=============================================================================|
-|    0      4761    G   /usr/lib/xorg/Xorg                             259MiB |
-|    0      5224    G   compiz                                         253MiB |
-+-----------------------------------------------------------------------------+
 	> cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery
 	> make
 	>  ./deviceQuery
-
-################################################################################
-CUDA Device Query (Runtime API) version (CUDART static linking)
-
-Detected 1 CUDA Capable device(s)
-
-Device 0: "GeForce GTX 1080"
-  CUDA Driver Version / Runtime Version          8.0 / 8.0
-  CUDA Capability Major/Minor version number:    6.1
-  Total amount of global memory:                 8110 MBytes (8504279040 bytes)
-  (20) Multiprocessors, (128) CUDA Cores/MP:     2560 CUDA Cores
-  GPU Max Clock rate:                            1734 MHz (1.73 GHz)
-  Memory Clock rate:                             5005 Mhz
-  Memory Bus Width:                              256-bit
-  L2 Cache Size:                                 2097152 bytes
-  Maximum Texture Dimension Size (x,y,z)      1D=(131072), 2D=(131072, 65536),      3D=(16384, 16384, 16384)
-  Maximum Layered 1D Texture Size, (num) layers  1D=(32768), 2048 layers
-  Maximum Layered 2D Texture Size, (num) layers  2D=(32768, 32768), 2048 layers
-  Total amount of constant memory:               65536 bytes
-  Total amount of shared memory per block:       49152 bytes
-  Total number of registers available per block: 65536
-  Warp size:                                     32
-  Maximum number of threads per multiprocessor:  2048
-  Maximum number of threads per block:           1024
-  Max dimension size of a thread block (x,y,z): (1024, 1024, 64)
-  Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)
-  Maximum memory pitch:                          2147483647 bytes
-  Texture alignment:                             512 bytes
-  Concurrent copy and kernel execution:          Yes with 2 copy engine(s)
-  Run time limit on kernels:                     Yes
-  Integrated GPU sharing Host Memory:            No
-  Support host page-locked memory mapping:       Yes
-  Alignment requirement for Surfaces:            Yes
-  Device has ECC support:                        Disabled
-  Device supports Unified Addressing (UVA):      Yes
-  Device PCI Domain ID / Bus ID / location ID:   0 / 5 / 0
-
-  Compute Mode:
-     < Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) >
-
-deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 8.0, CUDA Runtime Version = 8.0, NumDevs = 1, Device0 = GeForce GTX 1080
-Result = PASS
 
 5th:install opencv3.6
 
